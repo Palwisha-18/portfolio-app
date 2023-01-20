@@ -17,7 +17,7 @@ with col2:
 st.write("Below you can find some of the apps I have built in Python. Feel free to contact me!")
 
 
-col3, col4 = st.columns(2)
+col3, empty_col, col4 = st.columns([1.5, 0.5, 1.5])
 
 df = pandas.read_csv('data.csv', sep=';')
 
@@ -26,7 +26,7 @@ with col3:
         st.header(row['title'])
         st.write(row['description'])
         st.image(f"images/{row['image']}")
-        st.write(row['url'])
+        st.write(f"[Source Code]({row['url']})")
 
 
 with col4:
@@ -34,4 +34,4 @@ with col4:
         st.header(row['title'])
         st.write(row['description'])
         st.image(f"images/{row['image']}")
-        st.write(row['url'])
+        st.write(f"[Source Code]({row['url']})")
